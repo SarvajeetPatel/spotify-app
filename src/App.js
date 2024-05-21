@@ -1,24 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
+import AudioPlayer from './components/AudioPlayer';
 
 function App() {
+  console.log(window.location.href)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {(window.location.href !== 'http://localhost:3000/') ?
+        <h1> Access Denied! huhh </h1>
+        :
+        <AudioPlayer />
+      }
+    </>
   );
 }
 
