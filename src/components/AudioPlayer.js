@@ -24,19 +24,21 @@ const AudioPlayer = () => {
     }
 
     return (
-        <div className="audio-player">
-            <div className="inner">
-                <DisplayTrack {...{ currentTrack, audioRef, setDuration, progressBarRef, handleNext }} />
-                <Controls {...{
-                    audioRef, progressBarRef, duration, setTimeProgress, tracks,
-                    trackIndex,
-                    setTrackIndex,
-                    setCurrentTrack,
-                    handleNext
-                }} />
-                <ProgressBar {...{ progressBarRef, audioRef, timeProgress, duration }} />
-            </div>
-        </div>
+        <>
+            <div className="audio-player">
+                <div className="inner">
+                    <DisplayTrack {...{ currentTrack, audioRef, setDuration, progressBarRef, handleNext }} />
+                    <Controls {...{
+                        audioRef, progressBarRef, duration, setTimeProgress, tracks,
+                        trackIndex,
+                        setTrackIndex,
+                        setCurrentTrack,
+                        handleNext
+                    }} />
+                    <ProgressBar {...{ progressBarRef, audioRef, timeProgress, duration }} />
+                </div>
+            </div >
+        </>
     );
 };
 export default AudioPlayer;

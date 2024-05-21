@@ -16,7 +16,7 @@ const Controls = ({ audioRef, progressBarRef, duration, setTimeProgress, tracks,
     const playAnimationRef = useRef()
 
     const repeat = useCallback(() => {
-        const currentTime = audioRef.current.currentTime
+        const currentTime = audioRef?.current?.currentTime
         setTimeProgress(currentTime)
         progressBarRef.current.value = currentTime
         progressBarRef.current.style.setProperty(
@@ -29,9 +29,9 @@ const Controls = ({ audioRef, progressBarRef, duration, setTimeProgress, tracks,
 
     useEffect(() => {
         if (isPlaying) {
-            audioRef.current.play()
+            audioRef?.current?.play()
         } else {
-            audioRef.current.pause()
+            audioRef?.current?.pause()
         }
         playAnimationRef.current = requestAnimationFrame(repeat)
     }, [isPlaying, audioRef, repeat])

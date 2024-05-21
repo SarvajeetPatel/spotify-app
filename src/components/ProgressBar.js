@@ -1,6 +1,6 @@
 const ProgressBar = ({ progressBarRef, audioRef, timeProgress, duration }) => {
     const handleProgressChange = () => {
-        audioRef.current.currentTime = progressBarRef.current.value
+        audioRef.current.currentTime = progressBarRef?.current.value
     }
 
     const formatTime = (time) => {
